@@ -15,7 +15,7 @@ def lot_data():
     df['LOT_DESCRIPTION_ORIGINAL']=df['LOT_DESCRIPTION_ORIGINAL'].str.replace(',',' ').str.lstrip()
     df['LOT_PRICE']=df['LOT_PRICE'].str.replace(',','')
 
-    df.to_csv(f'brn-tender-master_lot-data_{date}.csv')
+    df.to_csv('brn-tender-master_lot-data.csv')
     return
 
 def tender_details():
@@ -30,7 +30,7 @@ def tender_details():
     df['ADDRESS']=df['ADDRESS'].str.replace(',',' ')
     df['TEL']="+"+df['TEL']
 
-    df.to_csv(f'brn-tender-master_tender-details_{date}.csv')
+    df.to_csv('brn-tender-master_tender-details.csv')
     return
 
 def ted_data():
@@ -39,7 +39,7 @@ def ted_data():
 
     df = pd.read_csv(sheet, engine='python', header=0, delimiter=",", error_bad_lines=False, converters={'REF_INTERNAL':lambda x: str(x)})
 
-    df.to_csv(f'brn-tender-master_ted-data_{date}.csv')
+    df.to_csv('brn-tender-master_ted-data.csv')
     return
 
 lot_data()
