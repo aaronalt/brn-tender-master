@@ -37,7 +37,7 @@ def ted_data():
 
     sheet = 'https://docs.google.com/spreadsheets/d/152n781XHvDZGf_3qVXwEmYnOH-HQeyl-eaOq1NoOBqs/export?format=csv&id=152n781XHvDZGf_3qVXwEmYnOH-HQeyl-eaOq1NoOBqs&gid=2098872239'
 
-    df = pd.read_csv(sheet, engine='python', header=0, delimiter=",", error_bad_lines=False, converters={'REF_INTERNAL':lambda x: str(x)})
+    df = pd.read_csv(sheet, engine='python', header=0, delimiter=",", error_bad_lines=False, converters={'Internal REF':lambda x: str(x)})
 
     df.to_csv('brn-tender-master_ted-data.csv')
     return
